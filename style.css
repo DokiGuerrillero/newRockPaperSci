@@ -1,0 +1,119 @@
+@font-face {
+        font-family: 'pixelFont1';
+        src: url('./assets/font/upheavtt.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    
+}
+@font-face {
+    font-family: 'pixelFont2';
+    src: url('./assets/font/Fonti.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    font-family: "pixelFont2";
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.start {
+    width: 80vw;
+    height: 100vh;
+    margin: auto, auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+
+    
+    
+    font-size: 16px;
+}
+.order {
+    opacity: 0;
+}
+.unfade{
+    opacity: 1;
+    transition: all 3000ms ease;
+}
+.fade{
+    opacity: 0;
+    transition: all 1000ms ease;
+}
+
+.main{
+    justify-self:normal;
+    display: none;
+    transition: all 50ms ease-in;
+    width: 100vw;
+}
+.choice{
+    flex: 0 0 auto;
+    margin-left: 40px;
+}
+.choice > h1{
+    font-size: 60px;
+    font-family: 'pixelFont1';
+}
+.choice > p{
+    font-size: 16px;
+    font-family: 'pixelFont2';
+    padding-left: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+.Bottons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+#subTitle{
+    text-align: center;
+    margin-bottom: 40px;
+}
+img {
+    border: 6px solid white;
+    border-radius: 15px;
+}
+
+.result {
+    padding: 10px;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    align-self: center;
+}
+#result {
+    padding: 10px 5px 0px;
+}
+
+.boing{
+    color: rgb(189, 189, 189);
+    transition: all 5ms linear;
+}
+
+.boingDef{
+    color: rgb(255, 0, 0);
+    transition: all 50ms linear;
+}
+.boingVic{
+    color: rgb(0, 177, 0);
+    transition: all 50ms linear;
+}
+
