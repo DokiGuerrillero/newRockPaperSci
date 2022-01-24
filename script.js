@@ -8,18 +8,18 @@ function tick() {
     console.log("control")
     if (num==3){
         clearInterval(timer1);
-        setTimeout(()=>startDiv.classList= startDiv.classList.value + " fade",30)       
+        setTimeout(()=>startDiv.classList= startDiv.classList.value + " fade",3000)       
         setTimeout(()=>{
             startDiv.style.display="none";
             divMain.forEach(element => {
                 element.style.display="block";
             });
             texto.textContent="Choice"
-        },50)
+        },5000)
     }
     orders[++num].classList="unfade"
 }
-let timer1 = setInterval(tick,50);
+let timer1 = setInterval(tick,5000);
 window.onload = tick()
 
 
