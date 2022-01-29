@@ -3,6 +3,8 @@ const startDiv = document.querySelector(".start")
 const divMains = document.querySelectorAll(".main")
 const divMain = [...divMains]
 const orders = [...startAni]
+let  status = true;
+
 let num = -1;
 function tick() {
     console.log("control")
@@ -31,6 +33,7 @@ const imgs = document.querySelectorAll('img')
 const header = document.querySelector('#bot')
 const img = [...imgs]
 const texto = document.querySelector("#result")
+const audio = document.getElementById("Audio")
 let seleccion = 0
 
 
@@ -87,37 +90,40 @@ function playRound(playerSelection, computerSelection, alpha){
 let score = 0
 
 function reset () {
-    score = 0
-    texto.textContent="Choice"
-    document.getElementById('1').onclick = "play('a')";
-    document.getElementById('2').onclick = "play('b')";
-    document.getElementById('3').onclick = "play('c')";
+    if (status == false) {
+        score = 0
+        status = true
+        
+        texto.style.color = 'white'
+        document.getElementById('result').classList.toggle("boing")
+        texto.textContent="Choice"
+        setTimeout(() => {
+            document.getElementById('result').classList.toggle("boing")
+        }, 25); 
+    }
 }
 function play (a) {
-    console.log(score);
-    let computerSelection = computerPlay();
-    let playerSelection = a;
-    score = score + playRound(playerSelection, computerSelection, score)
-    if (score < -2){
-        texto.style.color = 'red'
-        texto.textContent="Return to the Stardust"
-        
-        document.getElementById('1').onclick = '';
-        document.getElementById('2').onclick = '';
-        document.getElementById('3').onclick = '';
-
-
-        document.getElementById("bot").onclick = 'reset()';        
-
-    } else if (score > 2){
-        texto.style.color = 'green'
-        texto.textContent="New lord";
-
-        document.getElementById('1').onclick = '';
-        document.getElementById('2').onclick = '';
-        document.getElementById('3').onclick = '';
-        
-        document.getElementById("bot").onclick = 'reset()';
+    if (status == true){
+        audio.play()
+        console.log(score);
+        let computerSelection = computerPlay();
+        let playerSelection = a;
+        score = score + playRound(playerSelection, computerSelection, score)
+        if (score < -2){
+            texto.style.color = 'red'
+            texto.textContent="Return to the Stardust"            
+            status = false
+            document.querySelectorAll(".img").hover = function(e) { 
+                $(this).css("border: 6px solid white") 
+            }
+        } else if (score > 2){
+            texto.style.color = 'green'
+            texto.textContent="New lord";
+            status = false
+            document.querySelectorAll(".img").hover = function(e) { 
+                $(this).css("border: 6px solid white") 
+            }
+        }
     }
     return score;
 }

@@ -91,6 +91,11 @@ img {
     border-radius: 15px;
 }
 
+img:hover {
+    border: 6px solid rgba(7, 207, 0, 0.884);
+    transition: all 250ms ease;
+}
+
 .result {
     padding: 10px;
     margin-top: 25vh;
@@ -104,16 +109,20 @@ img {
 }
 
 .boing{
-    color: rgb(189, 189, 189);
-    transition: all 5ms linear;
+    color: rgba(189, 189, 189, 0.849);
+    scale: 2;
+    transition: all 500ms ease;
 }
 
 .boingDef{
-    color: rgb(255, 0, 0);
-    transition: all 50ms linear;
+    color: rgba(255, 0, 0, 0.904);
+    scale: 1.1;
+    transition: all 300ms ease;
+
 }
 .boingVic{
-    color: rgb(0, 177, 0);
-    transition: all 50ms linear;
+    color: rgba(0, 177, 0, 0.911);
+    scale: 1.1;
+    transition: all 300ms ease;
 }
 
